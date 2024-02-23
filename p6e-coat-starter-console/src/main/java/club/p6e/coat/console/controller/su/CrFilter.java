@@ -1,6 +1,6 @@
 package club.p6e.coat.console.controller.su;
 
-import com.darvi.hksi.badminton.lib.controller.filter.CrossDomainWebFilter;
+import club.p6e.coat.common.controller.filter.CrossDomainWebFilter;
 import jakarta.servlet.annotation.WebFilter;
 
 

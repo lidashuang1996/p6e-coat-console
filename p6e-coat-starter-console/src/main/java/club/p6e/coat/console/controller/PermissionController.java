@@ -1,12 +1,12 @@
 package club.p6e.coat.console.controller;
 
+import club.p6e.coat.common.context.ResultContext;
+import club.p6e.coat.common.utils.CopyUtil;
 import club.p6e.coat.console.application.service.PermissionServer;
 import club.p6e.coat.console.error.GlobalExceptionContext;
 import club.p6e.coat.console.infrastructure.context.PermissionContext;
 import club.p6e.coat.console.infrastructure.model.PermissionUrlGroupModel;
 import club.p6e.coat.console.infrastructure.model.PermissionUrlModel;
-import com.darvi.hksi.badminton.lib.context.ResultContext;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
 import org.springframework.web.bind.annotation.*;
 
 /**

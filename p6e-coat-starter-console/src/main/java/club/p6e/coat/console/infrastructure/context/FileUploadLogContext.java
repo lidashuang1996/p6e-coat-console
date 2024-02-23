@@ -1,6 +1,6 @@
 package club.p6e.coat.console.infrastructure.context;
 
-import com.darvi.hksi.badminton.lib.context.BaseContext;
+import club.p6e.coat.common.context.BaseContext;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;

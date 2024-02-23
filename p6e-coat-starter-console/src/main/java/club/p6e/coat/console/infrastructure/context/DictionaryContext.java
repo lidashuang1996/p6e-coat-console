@@ -1,8 +1,8 @@
 package club.p6e.coat.console.infrastructure.context;
 
-import com.darvi.hksi.badminton.lib.SearchableContext;
-import com.darvi.hksi.badminton.lib.SortableContext;
-import com.darvi.hksi.badminton.lib.context.BaseContext;
+import club.p6e.coat.common.context.BaseContext;
+import club.p6e.coat.common.search.SearchableContext;
+import club.p6e.coat.common.sortable.SortableContext;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;

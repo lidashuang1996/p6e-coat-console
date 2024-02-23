@@ -1,9 +1,9 @@
 package club.p6e.coat.console.controller;
 
+import club.p6e.coat.common.context.ResultContext;
+import club.p6e.coat.common.utils.CopyUtil;
 import club.p6e.coat.console.application.service.MeService;
 import club.p6e.coat.console.infrastructure.context.MeContext;
-import com.darvi.hksi.badminton.lib.context.ResultContext;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
 import org.springframework.web.bind.annotation.*;
 
 /**

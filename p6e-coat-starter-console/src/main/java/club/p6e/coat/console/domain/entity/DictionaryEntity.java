@@ -6,6 +6,8 @@ import club.p6e.coat.console.infrastructure.model.DictionaryModel;
 import club.p6e.coat.console.infrastructure.repository.DictionaryRepository;
 import com.darvi.hksi.badminton.lib.utils.CopyUtil;
 import com.darvi.hksi.badminton.lib.utils.SpringUtil;
+import jakarta.persistence.OrderBy;
+import jakarta.persistence.criteria.Order;
 import org.springframework.data.jpa.domain.Specification;
 
 import java.io.Serializable;
@@ -45,10 +47,27 @@ public class DictionaryEntity extends ConfigurationDomain implements Serializabl
         final String nLanguage = language == null ? DEFAULT_LANGUAGE : language;
         final DictionaryRepository repository = SpringUtil.getBean(DictionaryRepository.class);
         final List<DictionaryModel> dList = repository.findAll(
-                (Specification<DictionaryModel>) (root, query, cb) -> cb.and(
-                        cb.in(root.get(DictionaryModel.TYPE)).value(types),
-                        cb.equal(root.get(DictionaryModel.LANGUAGE), nLanguage)
-                ));
+                (Specification<DictionaryModel>) (root, query, cb) -> {
+
+                    cb.asc()
+
+                            cb.desc()
+
+
+                    query.orderBy(
+                            cb.asc(root.get(DictionaryModel.TYPE)),
+                            cb.asc(root.get(DictionaryModel.KEY))
+                    );
+
+                    query.getRestriction();
+
+                    cb.and(
+                            cb.in(root.get(DictionaryModel.TYPE)).value(types),
+                            cb.equal(root.get(DictionaryModel.LANGUAGE), nLanguage)
+                    )
+
+
+                });
         final Map<String, Map<String, String>> result = new HashMap<>();
         for (final DictionaryModel item : dList) {
             result.computeIfAbsent(item.getType(), k -> new HashMap<>());

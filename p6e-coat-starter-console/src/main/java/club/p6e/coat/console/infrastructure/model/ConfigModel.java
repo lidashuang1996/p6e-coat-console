@@ -1,8 +1,8 @@
 package club.p6e.coat.console.infrastructure.model;
 
+import club.p6e.coat.common.search.Searchable;
+import club.p6e.coat.common.sortable.Sortable;
 import club.p6e.coat.console.infrastructure.model.listener.BaseModelListener;
-import com.darvi.hksi.badminton.lib.Searchable;
-import com.darvi.hksi.badminton.lib.Sortable;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -22,6 +22,7 @@ import java.time.LocalDateTime;
 public class ConfigModel implements Serializable {
 
     public static final String ID = "id";
+    public static final String TYPE = "type";
     public static final String KEY = "key";
     public static final String VALUE = "value";
     public static final String CREATE_DATE = "createDate";
@@ -35,6 +36,9 @@ public class ConfigModel implements Serializable {
     @Column(name = "[id]")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Searchable
+    @Column(name = "[key]")
+    private String type;
     @Searchable
     @Column(name = "[key]")
     private String key;

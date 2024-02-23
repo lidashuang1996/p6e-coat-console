@@ -1,11 +1,11 @@
 package club.p6e.coat.console.application.service.impl;
 
+import club.p6e.coat.common.utils.CopyUtil;
 import club.p6e.coat.console.application.service.UserServer;
 import club.p6e.coat.console.domain.aggregate.UserListAggregate;
 import club.p6e.coat.console.domain.entity.UserEntity;
 import club.p6e.coat.console.infrastructure.context.UserContext;
 import club.p6e.coat.console.infrastructure.model.UserModel;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
 import org.springframework.stereotype.Service;
 
 /**

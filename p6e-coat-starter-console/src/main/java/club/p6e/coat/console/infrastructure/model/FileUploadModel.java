@@ -19,6 +19,17 @@ public class FileUploadModel implements Serializable {
 
     public static final String ID = "id";
     public static final String NAME = "name";
+    public static final String SIZE = "size";
+    public static final String SOURCE = "source";
+    public static final String STORAGE_TYPE = "storageType";
+    public static final String STORAGE_LOCATION = "storageLocation";
+    public static final String OWNER = "owner";
+    public static final String LOCK = "lock";
+    public static final String CREATE_DATE = "createDate";
+    public static final String UPDATE_DATE = "updateDate";
+    public static final String OPERATOR = "operator";
+    public static final String VERSION = "version";
+
     @Id
     @Column(name = "[id]")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,15 +37,15 @@ public class FileUploadModel implements Serializable {
     @Column(name = "[name]")
     private String name;
     @Column(name = "[size]")
-    private String size;
+    private Long size;
     @Column(name = "[source]")
     private String source;
+    @Column(name = "[storage_type]")
+    private String storageType;
     @Column(name = "[storage_location]")
     private String storageLocation;
     @Column(name = "[owner]")
     private String owner;
-    @Column(name = "[rubbish]")
-    private Integer rubbish;
     @Column(name = "[lock]")
     private Integer lock;
     @Column(name = "[create_date]")

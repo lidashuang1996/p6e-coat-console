@@ -1,10 +1,10 @@
 package club.p6e.coat.console.application.service.impl;
 
+import club.p6e.coat.common.utils.CopyUtil;
 import club.p6e.coat.console.application.service.FileUploadLogService;
 import club.p6e.coat.console.domain.aggregate.FileUploadLogDetailsAggregate;
 import club.p6e.coat.console.domain.aggregate.FileUploadLogListAggregate;
 import club.p6e.coat.console.infrastructure.context.FileUploadLogContext;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
 import org.springframework.stereotype.Service;
 
 /**

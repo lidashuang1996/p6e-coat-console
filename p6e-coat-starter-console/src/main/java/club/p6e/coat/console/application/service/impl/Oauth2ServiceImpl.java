@@ -1,11 +1,11 @@
 package club.p6e.coat.console.application.service.impl;
 
+import club.p6e.coat.common.utils.CopyUtil;
 import club.p6e.coat.console.application.service.Oauth2Service;
 import club.p6e.coat.console.domain.aggregate.Oauth2ClientListAggregate;
 import club.p6e.coat.console.domain.entity.Oauth2ClientEntity;
 import club.p6e.coat.console.infrastructure.context.Oauth2Context;
 import club.p6e.coat.console.infrastructure.model.Oauth2ClientModel;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
 import org.springframework.stereotype.Service;
 
 /**

@@ -1,11 +1,11 @@
 package club.p6e.coat.console.application.service.impl;
 
+import club.p6e.coat.common.utils.CopyUtil;
 import club.p6e.coat.console.application.service.MeService;
 import club.p6e.coat.console.domain.entity.UserAuthEntity;
 import club.p6e.coat.console.infrastructure.context.MeContext;
+import club.p6e.coat.console.infrastructure.core.AuthCore;
 import club.p6e.coat.console.infrastructure.model.UserAuthModel;
-import com.darvi.hksi.badminton.lib.AuthCore;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
 import org.springframework.stereotype.Service;
 
 /**

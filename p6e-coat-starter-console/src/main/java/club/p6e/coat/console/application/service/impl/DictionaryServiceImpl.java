@@ -1,11 +1,11 @@
 package club.p6e.coat.console.application.service.impl;
 
+import club.p6e.coat.common.utils.CopyUtil;
 import club.p6e.coat.console.application.service.DictionaryService;
 import club.p6e.coat.console.domain.aggregate.DictionaryListAggregate;
 import club.p6e.coat.console.domain.entity.DictionaryEntity;
 import club.p6e.coat.console.infrastructure.context.DictionaryContext;
 import club.p6e.coat.console.infrastructure.model.DictionaryModel;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
 import org.springframework.stereotype.Service;
 
 /**

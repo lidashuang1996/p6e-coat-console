@@ -1,11 +1,11 @@
 package club.p6e.coat.console.controller;
 
+import club.p6e.coat.common.context.ResultContext;
+import club.p6e.coat.common.utils.CopyUtil;
 import club.p6e.coat.console.application.service.DictionaryService;
 import club.p6e.coat.console.error.GlobalExceptionContext;
 import club.p6e.coat.console.infrastructure.context.DictionaryContext;
 import club.p6e.coat.console.infrastructure.model.DictionaryModel;
-import com.darvi.hksi.badminton.lib.context.ResultContext;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -144,14 +144,14 @@ public class DictionaryController {
         if (request == null) {
             throw GlobalExceptionContext.executeParameterException(
                     this.getClass(),
-                    "fun postType(@RequestBody DictionaryContext.Type.Request request)",
+                    "fun postType(DictionaryContext.Type.Request request)",
                     "Request sort validation exception."
             );
         }
         if (request.getType() == null && request.getTypes().isEmpty()) {
             throw GlobalExceptionContext.executeParameterException(
                     this.getClass(),
-                    "fun postType(@RequestBody DictionaryContext.Type.Request request)",
+                    "fun postType(DictionaryContext.Type.Request request)",
                     "Request sort validation exception."
             );
         }

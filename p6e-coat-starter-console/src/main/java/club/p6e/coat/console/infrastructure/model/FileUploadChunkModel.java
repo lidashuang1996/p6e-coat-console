@@ -19,6 +19,11 @@ public class FileUploadChunkModel implements Serializable {
 
     public static final String ID = "id";
     public static final String FID = "fid";
+    public static final String NAME = "name";
+    public static final String SIZE = "size";
+    public static final String DATE = "date";
+    public static final String OPERATOR = "operator";
+
     @Id
     @Column(name = "[id]")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
