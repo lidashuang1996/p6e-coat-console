@@ -34,32 +34,32 @@ public class DictionaryModel implements Serializable {
     @Id
     @Sortable
     @Searchable
-    @Column(name = "[id]")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Searchable
-    @Column(name = "[type]")
+    @Column(name = "type")
     private String type;
     @Searchable
-    @Column(name = "[key]")
+    @Column(name = "key")
     private String key;
     @Searchable
-    @Column(name = "[value]")
+    @Column(name = "value")
     private String value;
     @Searchable
-    @Column(name = "[language]")
+    @Column(name = "language")
     private String language;
     @Sortable
     @Searchable
-    @Column(name = "[create_date]")
+    @Column(name = "create_date")
     private LocalDateTime createDate;
     @Sortable
     @Searchable
-    @Column(name = "[update_date]")
+    @Column(name = "update_date")
     private LocalDateTime updateDate;
-    @Column(name = "[operator]")
+    @Column(name = "operator")
     private String operator;
-    @Column(name = "[version]")
+    @Column(name = "version")
     private Integer version;
 
 }

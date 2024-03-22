@@ -1,67 +1,29 @@
 package club.p6e.coat.console.domain.aggregate;
 
-import club.p6e.coat.console.domain.ConfigurationDomain;
-import club.p6e.coat.console.infrastructure.model.FileUploadModel;
-import club.p6e.coat.console.infrastructure.repository.FileUploadRepository;
-import com.darvi.hksi.badminton.lib.utils.SpringUtil;
-import jakarta.persistence.criteria.Predicate;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.Specification;
+import club.p6e.coat.console.domain.ListAggregate;
+import club.p6e.coat.console.domain.entity.FileUploadLogEntity;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
 /**
+ * 文件上传日志列表的聚合根
+ *
  * @author lidashuang
  * @version 1.0
  */
-public class FileUploadLogListAggregate extends ConfigurationDomain {
+public class FileUploadLogListAggregate extends ListAggregate<FileUploadLogEntity> implements Serializable {
 
-    private final int page;
-    private final int size;
-    private final long total;
-    private final List<FileUploadModel> list;
-
-    public static FileUploadLogListAggregate search(Integer page, Integer size, String query) {
-        page = initPage(page);
-        size = initSize(size);
-        final FileUploadRepository repository = SpringUtil.getBean(FileUploadRepository.class);
-        final Page<FileUploadModel> pfm = repository.findAll((Specification<FileUploadModel>) (rt, qy, cb) -> {
-            final List<Predicate> predicates = new ArrayList<>();
-            if (query != null) {
-                final String lq = "%" + query + "%";
-                predicates.add(cb.or(
-                        cb.like(cb.lower(rt.get(FileUploadModel.NAME)), lq)
-                ));
-            }
-            return cb.and(predicates.toArray(new Predicate[0]));
-        }, PageRequest.of(page - 1, size,  Sort.by(Sort.Order.desc(FileUploadModel.ID))));
-        return new FileUploadLogListAggregate(page, size, pfm.getTotalElements(), new ArrayList<>(pfm.getContent()));
-    }
-
-    private FileUploadLogListAggregate(int page, int size, long total, List<FileUploadModel> list) {
-        this.list = list;
-        this.page = page;
-        this.size = size;
-        this.total = total;
-    }
-
-    public int getPage() {
-        return page;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public long getTotal() {
-        return total;
-    }
-
-    public List<FileUploadModel> getList() {
-        return list;
+    /**
+     * 构造方法初始化
+     *
+     * @param page  页码
+     * @param size  页长
+     * @param total 总数
+     * @param list  列表
+     */
+    public FileUploadLogListAggregate(int page, int size, long total, List<FileUploadLogEntity> list) {
+        super(page, size, total, list);
     }
 
 }

@@ -1,16 +1,10 @@
 package club.p6e.coat.console.infrastructure.model;
 
 import club.p6e.coat.console.infrastructure.model.listener.BaseModelListener;
-import com.darvi.hksi.badminton.lib.Searchable;
-import com.darvi.hksi.badminton.lib.Sortable;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.hibernate.annotations.Where;
+import org.springframework.data.domain.Persistable;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -23,7 +17,6 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 @Entity
 @Table(name = "p6e_user")
-@Where(clause = "is_delete = 0")
 @EntityListeners(value = BaseModelListener.class)
 public class UserModel implements Serializable {
 
@@ -36,7 +29,7 @@ public class UserModel implements Serializable {
     public static final String NAME = "name";
     public static final String NICKNAME = "nickname";
     public static final String AVATAR = "avatar";
-    public static final String DESCRIBE = "describe";
+    public static final String DESCRIPTION = "description";
     public static final String CREATE_DATE = "createDate";
     public static final String UPDATE_DATE = "updateDate";
     public static final String OPERATOR = "operator";
@@ -44,74 +37,37 @@ public class UserModel implements Serializable {
     public static final String IS_DELETE = "isDelete";
 
     @Id
-    @Sortable
-    @Searchable
-    @Column(name = "[id]")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @NotEmpty
-    @Searchable
-    @Column(name = "[status]")
+    @Column(name = "status")
     private Integer status;
-    @NotNull
-    @Searchable
-    @Column(name = "[enabled]")
+    @Column(name = "enabled")
     private Integer enabled;
-    @Size(max = 50)
-    @NotEmpty
-    @Searchable
-    @Column(name = "[account]")
+    @Column(name = "internal")
+    private Integer internal;
+    @Column(name = "administrator")
+    private Integer administrator;
+    @Column(name = "account")
     private String account;
-    @Size(max = 20)
-    @NotEmpty
-    @Searchable
-    @Column(name = "[phone]")
+    @Column(name = "phone")
     private String phone;
-    @Size(max = 100)
-    @NotEmpty
-    @Email
-    @Searchable
-    @Column(name = "[mailbox]")
+    @Column(name = "mailbox")
     private String mailbox;
-    @Size(max = 50)
-    @NotEmpty
-    @Searchable
-    @Column(name = "[name]")
+    @Column(name = "name")
     private String name;
-    @Size(max = 50)
-    @NotEmpty
-    @Searchable
-    @Column(name = "[nickname]")
+    @Column(name = "nickname")
     private String nickname;
-    @Size(max = 200)
-    @NotEmpty
-    @Column(name = "[avatar]")
+    @Column(name = "avatar")
     private String avatar;
-    @Size(max = 200)
-    @NotNull
-    @Searchable
-    @Column(name = "[describe]")
-    private String describe;
-    @NotEmpty
-    @Sortable
-    @Searchable
-    @Column(name = "[create_date]")
+    @Column(name = "description")
+    private String description;
+    @Column(name = "create_date")
     private LocalDateTime createDate;
-    @NotEmpty
-    @Sortable
-    @Searchable
-    @Column(name = "[update_date]")
+    @Column(name = "update_date")
     private LocalDateTime updateDate;
-    @Size(max = 50)
-    @NotEmpty
-    @Searchable
-    @Column(name = "[operator]")
-    private String operator;
-    @NotEmpty
-    @Column(name = "[version]")
+    @Column(name = "version")
     private Integer version;
-    @NotEmpty
-    @Column(name = "[is_delete]")
-    private Integer isDelete;
-
+    @Column(name = "operator")
+    private String operator;
 }

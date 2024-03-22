@@ -1,108 +1,81 @@
 package club.p6e.coat.console.domain.entity;
 
-import club.p6e.coat.console.domain.ConfigurationDomain;
-import club.p6e.coat.console.error.GlobalExceptionContext;
+import club.p6e.coat.common.utils.CopyUtil;
+import club.p6e.coat.console.domain.Entity;
+import club.p6e.coat.console.domain.identifier.DictionaryId;
 import club.p6e.coat.console.infrastructure.model.DictionaryModel;
-import club.p6e.coat.console.infrastructure.repository.DictionaryRepository;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
-import com.darvi.hksi.badminton.lib.utils.SpringUtil;
-import jakarta.persistence.OrderBy;
-import jakarta.persistence.criteria.Order;
-import org.springframework.data.jpa.domain.Specification;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.time.LocalDateTime;
 
 /**
  * @author lidashuang
  * @version 1.0
  */
-public class DictionaryEntity extends ConfigurationDomain implements Serializable {
+@Data
+@Accessors(chain = true)
+public class DictionaryEntity implements Entity<DictionaryId>, Serializable {
 
-    private final DictionaryModel model;
+    /**
+     * ID
+     */
+    private final DictionaryId id;
 
-    public static DictionaryEntity findById(Integer id) {
-        final DictionaryRepository repository = SpringUtil.getBean(DictionaryRepository.class);
-        final Optional<DictionaryModel> optional = repository.findById(id);
-        if (optional.isEmpty()) {
-            throw GlobalExceptionContext.exceptionAccountException(
-                    DictionaryEntity.class,
-                    "",
-                    ""
-            );
-        } else {
-            return new DictionaryEntity(optional.get());
-        }
+    /**
+     * KEY
+     */
+    private String key;
+
+    /**
+     * VALUE
+     */
+    private String value;
+
+    /**
+     * TYPE
+     */
+    private String type;
+
+    /**
+     * LANGUAGE
+     */
+    private String language;
+
+    /**
+     * OPERATOR
+     */
+    private String operator;
+
+    /**
+     * CREATE DATE
+     */
+    private LocalDateTime createDate;
+
+    /**
+     * UPDATE DATE
+     */
+    private LocalDateTime updateDate;
+
+    /**
+     * 构造方法初始化
+     *
+     * @param id    ID
+     * @param model 模型对象
+     */
+    public DictionaryEntity(DictionaryId id, DictionaryModel model) {
+        this.id = id;
+        CopyUtil.run(model, this);
     }
 
-    public static DictionaryEntity create(DictionaryModel model) {
-        final DictionaryRepository repository = SpringUtil.getBean(DictionaryRepository.class);
-        return new DictionaryEntity(repository.saveAndFlush(model));
+    @Override
+    public DictionaryId id() {
+        return id;
     }
 
-    public static Map<String, Map<String, String>> type(List<String> types, String language) {
-        final String nLanguage = language == null ? DEFAULT_LANGUAGE : language;
-        final DictionaryRepository repository = SpringUtil.getBean(DictionaryRepository.class);
-        final List<DictionaryModel> dList = repository.findAll(
-                (Specification<DictionaryModel>) (root, query, cb) -> {
-
-                    cb.asc()
-
-                            cb.desc()
-
-
-                    query.orderBy(
-                            cb.asc(root.get(DictionaryModel.TYPE)),
-                            cb.asc(root.get(DictionaryModel.KEY))
-                    );
-
-                    query.getRestriction();
-
-                    cb.and(
-                            cb.in(root.get(DictionaryModel.TYPE)).value(types),
-                            cb.equal(root.get(DictionaryModel.LANGUAGE), nLanguage)
-                    )
-
-
-                });
-        final Map<String, Map<String, String>> result = new HashMap<>();
-        for (final DictionaryModel item : dList) {
-            result.computeIfAbsent(item.getType(), k -> new HashMap<>());
-            result.get(item.getType()).put(item.getKey(), item.getValue());
-        }
-        return result;
-    }
-
-    private DictionaryEntity(DictionaryModel model) {
-        this.model = model;
-    }
-
-    public DictionaryEntity update(DictionaryModel um) {
-        um.setId(null);
-        final DictionaryRepository repository = SpringUtil.getBean(DictionaryRepository.class);
-        return new DictionaryEntity(repository.saveAndFlush(CopyUtil.run(um, model)));
-    }
-
-    public DictionaryEntity delete() {
-        final DictionaryRepository repository = SpringUtil.getBean(DictionaryRepository.class);
-        final Optional<DictionaryModel> optional = repository.findById(model.getId());
-        if (optional.isEmpty()) {
-            throw GlobalExceptionContext.exceptionAccountException(
-                    DictionaryEntity.class,
-                    "",
-                    ""
-            );
-        } else {
-            repository.delete(optional.get());
-            return new DictionaryEntity(optional.get());
-        }
-    }
-
-    public DictionaryModel getModel() {
-        return model;
+    public DictionaryModel convertToModel() {
+        return CopyUtil.run(this, DictionaryModel.class).setId(id == null ? null : id.getId());
     }
 
 }

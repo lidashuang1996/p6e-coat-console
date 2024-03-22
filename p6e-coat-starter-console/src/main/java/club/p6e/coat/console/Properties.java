@@ -15,6 +15,8 @@ import java.io.Serializable;
 @ConfigurationProperties(prefix = "p6e.cloud.index")
 public class Properties implements Serializable {
 
+    private String defaultPassword = "123456";
+
     private Auth auth = new Auth();
     private FileUpload fileUpload = new FileUpload();
 

@@ -25,17 +25,17 @@ public class FileUploadChunkModel implements Serializable {
     public static final String OPERATOR = "operator";
 
     @Id
-    @Column(name = "[id]")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "[fid]")
+    @Column(name = "fid")
     private Integer fid;
-    @Column(name = "[name]")
+    @Column(name = "name")
     private String name;
-    @Column(name = "[size]")
+    @Column(name = "size")
     private Integer size;
-    @Column(name = "[date]")
+    @Column(name = "date")
     private LocalDateTime date;
-    @Column(name = "[operator]")
+    @Column(name = "operator")
     private String operator;
 }

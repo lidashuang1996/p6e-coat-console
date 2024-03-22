@@ -1,0 +1,344 @@
+2024-03-04 17:24:42 [background-preinit] INFO - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-04 17:24:42 [main] INFO - Starting P6eCloudIndexApplication using Java 17.0.7 with PID 32572 (D:\CodeContents\github\p6e-coat-console\p6e-coat-starter-console\target\classes started by a1294 in D:\CodeContents\github\p6e-coat-console)
+2024-03-04 17:24:42 [main] INFO - No active profile set, falling back to 1 default profile: "default"
+2024-03-04 17:24:43 [main] INFO - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-04 17:24:43 [main] INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-04 17:24:43 [main] INFO - Finished Spring Data repository scanning in 98 ms. Found 9 JPA repository interfaces.
+2024-03-04 17:24:43 [main] INFO - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-04 17:24:43 [main] INFO - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-04 17:24:43 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.ConfigRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:24:43 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.DictionaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:24:43 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.FileUploadChunkRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:24:43 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.FileUploadRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:24:43 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlGroupRelationUrlRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:24:43 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlGroupRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:24:43 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:24:43 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.UserAuthRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:24:43 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:24:43 [main] INFO - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-03-04 17:24:43 [main] INFO - Tomcat initialized with port(s): 9999 (http)
+2024-03-04 17:24:43 [main] INFO - Initializing ProtocolHandler ["http-nio-9999"]
+2024-03-04 17:24:43 [main] INFO - Starting service [Tomcat]
+2024-03-04 17:24:43 [main] INFO - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-03-04 17:24:43 [main] INFO - Initializing Spring embedded WebApplicationContext
+2024-03-04 17:24:43 [main] INFO - Root WebApplicationContext: initialization completed in 918 ms
+2024-03-04 17:24:43 [main] INFO - HikariPool-1 - Starting...
+2024-03-04 17:24:44 [main] INFO - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@478967eb
+2024-03-04 17:24:44 [main] INFO - HikariPool-1 - Start completed.
+2024-03-04 17:24:44 [main] INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-04 17:24:44 [main] INFO - HHH000412: Hibernate ORM core version 6.2.2.Final
+2024-03-04 17:24:44 [main] INFO - HHH000406: Using bytecode reflection optimizer
+2024-03-04 17:24:44 [main] INFO - HHH000021: Bytecode provider name : bytebuddy
+2024-03-04 17:24:44 [main] INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-04 17:24:44 [main] INFO - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@5f3f57ff
+2024-03-04 17:24:44 [main] INFO - HHH000021: Bytecode provider name : bytebuddy
+2024-03-04 17:24:44 [main] ERROR - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Column 'key' is duplicated in mapping for entity 'club.p6e.coat.console.infrastructure.model.ConfigModel' (use '@Column(insertable=false, updatable=false)' when mapping multiple properties to the same column)
+2024-03-04 17:24:44 [main] WARN - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Column 'key' is duplicated in mapping for entity 'club.p6e.coat.console.infrastructure.model.ConfigModel' (use '@Column(insertable=false, updatable=false)' when mapping multiple properties to the same column)
+2024-03-04 17:24:44 [main] INFO - HikariPool-1 - Shutdown initiated...
+2024-03-04 17:24:44 [main] INFO - HikariPool-1 - Shutdown completed.
+2024-03-04 17:24:44 [main] INFO - Stopping service [Tomcat]
+2024-03-04 17:24:44 [main] INFO - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-04 17:24:44 [main] ERROR - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Column 'key' is duplicated in mapping for entity 'club.p6e.coat.console.infrastructure.model.ConfigModel' (use '@Column(insertable=false, updatable=false)' when mapping multiple properties to the same column)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294) ~[spring-boot-3.1.0.jar:3.1.0]
+	at club.p6e.coat.console.P6eCloudIndexApplication.main(P6eCloudIndexApplication.java:12) ~[classes/:na]
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Column 'key' is duplicated in mapping for entity 'club.p6e.coat.console.infrastructure.model.ConfigModel' (use '@Column(insertable=false, updatable=false)' when mapping multiple properties to the same column)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.0.9.jar:6.0.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.9.jar:6.0.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.9.jar:6.0.9]
+	... 16 common frames omitted
+Caused by: org.hibernate.MappingException: Column 'key' is duplicated in mapping for entity 'club.p6e.coat.console.infrastructure.model.ConfigModel' (use '@Column(insertable=false, updatable=false)' when mapping multiple properties to the same column)
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:1053) ~[hibernate-core-6.2.2.Final.jar:6.2.2.Final]
+	at org.hibernate.mapping.PersistentClass.checkPropertyColumnDuplication(PersistentClass.java:1079) ~[hibernate-core-6.2.2.Final.jar:6.2.2.Final]
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:1109) ~[hibernate-core-6.2.2.Final.jar:6.2.2.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:753) ~[hibernate-core-6.2.2.Final.jar:6.2.2.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:288) ~[hibernate-core-6.2.2.Final.jar:6.2.2.Final]
+	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:506) ~[hibernate-core-6.2.2.Final.jar:6.2.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:250) ~[hibernate-core-6.2.2.Final.jar:6.2.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.2.Final.jar:6.2.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1455) ~[hibernate-core-6.2.2.Final.jar:6.2.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.0.9.jar:6.0.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.9.jar:6.0.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.9.jar:6.0.9]
+	... 20 common frames omitted
+2024-03-04 17:53:49 [background-preinit] INFO - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-04 17:53:49 [main] INFO - Starting P6eCloudIndexApplication using Java 17.0.7 with PID 29712 (D:\CodeContents\github\p6e-coat-console\p6e-coat-starter-console\target\classes started by a1294 in D:\CodeContents\github\p6e-coat-console)
+2024-03-04 17:53:49 [main] INFO - No active profile set, falling back to 1 default profile: "default"
+2024-03-04 17:53:49 [main] INFO - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-04 17:53:49 [main] INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-04 17:53:49 [main] INFO - Finished Spring Data repository scanning in 94 ms. Found 9 JPA repository interfaces.
+2024-03-04 17:53:49 [main] INFO - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-04 17:53:49 [main] INFO - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-04 17:53:49 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.ConfigRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:53:49 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.DictionaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:53:49 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.FileUploadChunkRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:53:49 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.FileUploadRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:53:49 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlGroupRelationUrlRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:53:49 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlGroupRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:53:49 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:53:49 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.UserAuthRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:53:49 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 17:53:49 [main] INFO - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-03-04 17:53:49 [main] INFO - Tomcat initialized with port(s): 9999 (http)
+2024-03-04 17:53:49 [main] INFO - Initializing ProtocolHandler ["http-nio-9999"]
+2024-03-04 17:53:49 [main] INFO - Starting service [Tomcat]
+2024-03-04 17:53:49 [main] INFO - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-03-04 17:53:49 [main] INFO - Initializing Spring embedded WebApplicationContext
+2024-03-04 17:53:49 [main] INFO - Root WebApplicationContext: initialization completed in 757 ms
+2024-03-04 17:53:49 [main] INFO - HikariPool-1 - Starting...
+2024-03-04 17:53:50 [main] INFO - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d60059f
+2024-03-04 17:53:50 [main] INFO - HikariPool-1 - Start completed.
+2024-03-04 17:53:50 [main] INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-04 17:53:50 [main] INFO - HHH000412: Hibernate ORM core version 6.2.2.Final
+2024-03-04 17:53:50 [main] INFO - HHH000406: Using bytecode reflection optimizer
+2024-03-04 17:53:50 [main] INFO - HHH000021: Bytecode provider name : bytebuddy
+2024-03-04 17:53:50 [main] INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-04 17:53:50 [main] INFO - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@2acca224
+2024-03-04 17:53:50 [main] INFO - HHH000021: Bytecode provider name : bytebuddy
+2024-03-04 17:53:51 [main] INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-04 17:53:51 [main] INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-04 17:53:51 [main] INFO - Starting ProtocolHandler ["http-nio-9999"]
+2024-03-04 17:53:51 [main] INFO - Tomcat started on port(s): 9999 (http) with context path ''
+2024-03-04 17:53:51 [main] INFO - Started P6eCloudIndexApplication in 3.103 seconds (process running for 3.375)
+2024-03-04 18:10:48 [SpringApplicationShutdownHook] INFO - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-04 18:10:48 [SpringApplicationShutdownHook] INFO - HikariPool-1 - Shutdown initiated...
+2024-03-04 18:10:48 [SpringApplicationShutdownHook] INFO - HikariPool-1 - Shutdown completed.
+2024-03-04 18:10:51 [background-preinit] INFO - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-04 18:10:51 [main] INFO - Starting P6eCloudIndexApplication using Java 17.0.7 with PID 16672 (D:\CodeContents\github\p6e-coat-console\p6e-coat-starter-console\target\classes started by a1294 in D:\CodeContents\github\p6e-coat-console)
+2024-03-04 18:10:51 [main] INFO - No active profile set, falling back to 1 default profile: "default"
+2024-03-04 18:10:51 [main] INFO - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-04 18:10:51 [main] INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-04 18:10:51 [main] INFO - Finished Spring Data repository scanning in 122 ms. Found 9 JPA repository interfaces.
+2024-03-04 18:10:51 [main] INFO - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-04 18:10:51 [main] INFO - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-04 18:10:51 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.ConfigRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:10:51 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.DictionaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:10:51 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.FileUploadChunkRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:10:51 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.FileUploadRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:10:51 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlGroupRelationUrlRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:10:51 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlGroupRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:10:51 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:10:51 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.UserAuthRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:10:51 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:10:51 [main] INFO - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-03-04 18:10:51 [main] INFO - Tomcat initialized with port(s): 9999 (http)
+2024-03-04 18:10:51 [main] INFO - Initializing ProtocolHandler ["http-nio-9999"]
+2024-03-04 18:10:51 [main] INFO - Starting service [Tomcat]
+2024-03-04 18:10:51 [main] INFO - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-03-04 18:10:51 [main] INFO - Initializing Spring embedded WebApplicationContext
+2024-03-04 18:10:51 [main] INFO - Root WebApplicationContext: initialization completed in 825 ms
+2024-03-04 18:10:51 [main] INFO - HikariPool-1 - Starting...
+2024-03-04 18:10:52 [main] INFO - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5463f035
+2024-03-04 18:10:52 [main] INFO - HikariPool-1 - Start completed.
+2024-03-04 18:10:52 [main] INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-04 18:10:52 [main] INFO - HHH000412: Hibernate ORM core version 6.2.2.Final
+2024-03-04 18:10:52 [main] INFO - HHH000406: Using bytecode reflection optimizer
+2024-03-04 18:10:52 [main] INFO - HHH000021: Bytecode provider name : bytebuddy
+2024-03-04 18:10:52 [main] INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-04 18:10:52 [main] INFO - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@cf9bd1e
+2024-03-04 18:10:52 [main] INFO - HHH000021: Bytecode provider name : bytebuddy
+2024-03-04 18:10:53 [main] INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-04 18:10:53 [main] INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-04 18:10:53 [main] INFO - Starting ProtocolHandler ["http-nio-9999"]
+2024-03-04 18:10:53 [main] INFO - Tomcat started on port(s): 9999 (http) with context path ''
+2024-03-04 18:10:53 [main] INFO - Started P6eCloudIndexApplication in 2.976 seconds (process running for 3.265)
+2024-03-04 18:11:59 [http-nio-9999-exec-1] INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-04 18:11:59 [http-nio-9999-exec-1] INFO - Initializing Servlet 'dispatcherServlet'
+2024-03-04 18:11:59 [http-nio-9999-exec-1] INFO - Completed initialization in 1 ms
+2024-03-04 18:12:00 [http-nio-9999-exec-1] ERROR - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "club.p6e.coat.common.sortable.SortableContext.iterator()" because "context" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "club.p6e.coat.common.sortable.SortableContext.iterator()" because "context" is null
+	at club.p6e.coat.common.sortable.JpaSortableConverter.execute(JpaSortableConverter.java:53) ~[p6e-coat-starter-common-3.1.0.jar:3.1.0]
+	at club.p6e.coat.common.sortable.JpaSortableConverter.injectSort(JpaSortableConverter.java:31) ~[p6e-coat-starter-common-3.1.0.jar:3.1.0]
+	at club.p6e.coat.common.sortable.JpaSortableConverter.injectSort(JpaSortableConverter.java:27) ~[p6e-coat-starter-common-3.1.0.jar:3.1.0]
+	at club.p6e.coat.console.domain.repository.impl.ConfigDomainRepositoryImpl.lambda$list$5446532b$1(ConfigDomainRepositoryImpl.java:100) ~[classes/:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.applySpecificationToCriteria(SimpleJpaRepository.java:834) ~[spring-data-jpa-3.1.0.jar:3.1.0]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.getQuery(SimpleJpaRepository.java:768) ~[spring-data-jpa-3.1.0.jar:3.1.0]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.getQuery(SimpleJpaRepository.java:729) ~[spring-data-jpa-3.1.0.jar:3.1.0]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:472) ~[spring-data-jpa-3.1.0.jar:3.1.0]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:288) ~[spring-data-commons-3.1.0.jar:3.1.0]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136) ~[spring-data-commons-3.1.0.jar:3.1.0]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120) ~[spring-data-commons-3.1.0.jar:3.1.0]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516) ~[spring-data-commons-3.1.0.jar:3.1.0]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-3.1.0.jar:3.1.0]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628) ~[spring-data-commons-3.1.0.jar:3.1.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.9.jar:6.0.9]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168) ~[spring-data-commons-3.1.0.jar:3.1.0]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143) ~[spring-data-commons-3.1.0.jar:3.1.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.9.jar:6.0.9]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:77) ~[spring-data-commons-3.1.0.jar:3.1.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.9.jar:6.0.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.0.9.jar:6.0.9]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391) ~[spring-tx-6.0.9.jar:6.0.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.0.9.jar:6.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.9.jar:6.0.9]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-6.0.9.jar:6.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.9.jar:6.0.9]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:163) ~[spring-data-jpa-3.1.0.jar:3.1.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.9.jar:6.0.9]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.0.9.jar:6.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.9.jar:6.0.9]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.0.9.jar:6.0.9]
+	at jdk.proxy2/jdk.proxy2.$Proxy126.findAll(Unknown Source) ~[na:na]
+	at club.p6e.coat.console.domain.repository.impl.ConfigDomainRepositoryImpl.list(ConfigDomainRepositoryImpl.java:99) ~[classes/:na]
+	at club.p6e.coat.console.domain.service.impl.ConfigDomainServiceImpl.list(ConfigDomainServiceImpl.java:96) ~[classes/:na]
+	at club.p6e.coat.console.application.service.impl.ConfigServiceImpl.list(ConfigServiceImpl.java:61) ~[classes/:na]
+	at club.p6e.coat.console.controller.ConfigController.postList(ConfigController.java:65) ~[classes/:na]
+	at club.p6e.coat.console.controller.ConfigController.getList(ConfigController.java:43) ~[classes/:na]
+	at club.p6e.coat.console.controller.ConfigController.list(ConfigController.java:38) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.8.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.8.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+2024-03-04 18:22:59 [background-preinit] INFO - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-04 18:22:59 [main] INFO - Starting P6eCloudIndexApplication using Java 17.0.7 with PID 22828 (D:\CodeContents\github\p6e-coat-console\p6e-coat-starter-console\target\classes started by a1294 in D:\CodeContents\github\p6e-coat-console)
+2024-03-04 18:22:59 [main] INFO - No active profile set, falling back to 1 default profile: "default"
+2024-03-04 18:23:00 [main] INFO - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-04 18:23:00 [main] INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-04 18:23:00 [main] INFO - Finished Spring Data repository scanning in 100 ms. Found 9 JPA repository interfaces.
+2024-03-04 18:23:00 [main] INFO - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-04 18:23:00 [main] INFO - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-04 18:23:00 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.ConfigRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:23:00 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.DictionaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:23:00 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.FileUploadChunkRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:23:00 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.FileUploadRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:23:00 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlGroupRelationUrlRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:23:00 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlGroupRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:23:00 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:23:00 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.UserAuthRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:23:00 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:23:00 [main] INFO - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-03-04 18:23:00 [main] INFO - Tomcat initialized with port(s): 9999 (http)
+2024-03-04 18:23:00 [main] INFO - Initializing ProtocolHandler ["http-nio-9999"]
+2024-03-04 18:23:00 [main] INFO - Starting service [Tomcat]
+2024-03-04 18:23:00 [main] INFO - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-03-04 18:23:00 [main] INFO - Initializing Spring embedded WebApplicationContext
+2024-03-04 18:23:00 [main] INFO - Root WebApplicationContext: initialization completed in 802 ms
+2024-03-04 18:23:00 [main] INFO - HikariPool-1 - Starting...
+2024-03-04 18:23:00 [main] INFO - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@22f8adc2
+2024-03-04 18:23:00 [main] INFO - HikariPool-1 - Start completed.
+2024-03-04 18:23:00 [main] INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-04 18:23:00 [main] INFO - HHH000412: Hibernate ORM core version 6.2.2.Final
+2024-03-04 18:23:00 [main] INFO - HHH000406: Using bytecode reflection optimizer
+2024-03-04 18:23:01 [main] INFO - HHH000021: Bytecode provider name : bytebuddy
+2024-03-04 18:23:01 [main] INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-04 18:23:01 [main] INFO - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@4f581211
+2024-03-04 18:23:01 [main] INFO - HHH000021: Bytecode provider name : bytebuddy
+2024-03-04 18:23:01 [main] INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-04 18:23:01 [main] INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-04 18:23:02 [main] INFO - Starting ProtocolHandler ["http-nio-9999"]
+2024-03-04 18:23:02 [main] INFO - Tomcat started on port(s): 9999 (http) with context path ''
+2024-03-04 18:23:02 [main] INFO - Started P6eCloudIndexApplication in 2.861 seconds (process running for 3.15)
+2024-03-04 18:23:08 [http-nio-9999-exec-1] INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-04 18:23:08 [http-nio-9999-exec-1] INFO - Initializing Servlet 'dispatcherServlet'
+2024-03-04 18:23:08 [http-nio-9999-exec-1] INFO - Completed initialization in 1 ms
+2024-03-04 18:27:48 [background-preinit] INFO - HV000001: Hibernate Validator 8.0.0.Final
+2024-03-04 18:27:48 [main] INFO - Starting P6eCloudIndexApplication using Java 17.0.7 with PID 23152 (D:\CodeContents\github\p6e-coat-console\p6e-coat-starter-console\target\classes started by a1294 in D:\CodeContents\github\p6e-coat-console)
+2024-03-04 18:27:48 [main] INFO - No active profile set, falling back to 1 default profile: "default"
+2024-03-04 18:27:48 [main] INFO - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-04 18:27:48 [main] INFO - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-04 18:27:48 [main] INFO - Finished Spring Data repository scanning in 93 ms. Found 9 JPA repository interfaces.
+2024-03-04 18:27:48 [main] INFO - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-04 18:27:48 [main] INFO - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-04 18:27:48 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.ConfigRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:27:48 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.DictionaryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:27:48 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.FileUploadChunkRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:27:48 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.FileUploadRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:27:48 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlGroupRelationUrlRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:27:48 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlGroupRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:27:48 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.PermissionUrlRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:27:48 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.UserAuthRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:27:48 [main] INFO - Spring Data Redis - Could not safely identify store assignment for repository candidate interface club.p6e.coat.console.infrastructure.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-03-04 18:27:48 [main] INFO - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-03-04 18:27:49 [main] INFO - Tomcat initialized with port(s): 9999 (http)
+2024-03-04 18:27:49 [main] INFO - Initializing ProtocolHandler ["http-nio-9999"]
+2024-03-04 18:27:49 [main] INFO - Starting service [Tomcat]
+2024-03-04 18:27:49 [main] INFO - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2024-03-04 18:27:49 [main] INFO - Initializing Spring embedded WebApplicationContext
+2024-03-04 18:27:49 [main] INFO - Root WebApplicationContext: initialization completed in 785 ms
+2024-03-04 18:27:49 [main] INFO - HikariPool-1 - Starting...
+2024-03-04 18:27:49 [main] INFO - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d60059f
+2024-03-04 18:27:49 [main] INFO - HikariPool-1 - Start completed.
+2024-03-04 18:27:49 [main] INFO - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-04 18:27:49 [main] INFO - HHH000412: Hibernate ORM core version 6.2.2.Final
+2024-03-04 18:27:49 [main] INFO - HHH000406: Using bytecode reflection optimizer
+2024-03-04 18:27:49 [main] INFO - HHH000021: Bytecode provider name : bytebuddy
+2024-03-04 18:27:49 [main] INFO - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-04 18:27:49 [main] INFO - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@2acca224
+2024-03-04 18:27:50 [main] INFO - HHH000021: Bytecode provider name : bytebuddy
+2024-03-04 18:27:50 [main] INFO - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-03-04 18:27:50 [main] INFO - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-04 18:27:51 [main] INFO - Starting ProtocolHandler ["http-nio-9999"]
+2024-03-04 18:27:51 [main] INFO - Tomcat started on port(s): 9999 (http) with context path ''
+2024-03-04 18:27:51 [main] INFO - Started P6eCloudIndexApplication in 2.864 seconds (process running for 3.16)
+2024-03-04 18:28:02 [http-nio-9999-exec-1] INFO - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-04 18:28:02 [http-nio-9999-exec-1] INFO - Initializing Servlet 'dispatcherServlet'
+2024-03-04 18:28:02 [http-nio-9999-exec-1] INFO - Completed initialization in 0 ms

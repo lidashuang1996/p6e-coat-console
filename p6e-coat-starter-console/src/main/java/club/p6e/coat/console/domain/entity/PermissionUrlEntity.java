@@ -1,57 +1,83 @@
 package club.p6e.coat.console.domain.entity;
 
-import club.p6e.coat.console.error.GlobalExceptionContext;
+import club.p6e.coat.common.utils.CopyUtil;
+import club.p6e.coat.console.domain.Entity;
+import club.p6e.coat.console.domain.identifier.PermissionUrlId;
 import club.p6e.coat.console.infrastructure.model.PermissionUrlModel;
-import club.p6e.coat.console.infrastructure.repository.PermissionUrlRepository;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
-import com.darvi.hksi.badminton.lib.utils.SpringUtil;
+import lombok.Data;
 
-import java.util.Optional;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * @author lidashuang
  * @version 1.0
  */
-public class PermissionUrlEntity {
+@Data
+public class PermissionUrlEntity implements Entity<PermissionUrlId>, Serializable {
 
-    private final PermissionUrlModel model;
+    /**
+     * ID
+     */
+    private final PermissionUrlId id;
 
-    public static PermissionUrlEntity findById(Integer id) {
-        final PermissionUrlRepository repository = SpringUtil.getBean(PermissionUrlRepository.class);
-        final Optional<PermissionUrlModel> optional = repository.findById(id);
-        if (optional.isEmpty()) {
-            throw GlobalExceptionContext.executeUserNotExistException(
-                    PermissionUrlEntity.class,
-                    "",
-                    ""
-            );
-        } else {
-            return new PermissionUrlEntity(optional.get());
-        }
+    /**
+     * URL
+     */
+    private String url;
+
+    /**
+     * BASE URL
+     */
+    private String baseUrl;
+
+    /**
+     * BASE URL
+     */
+    private String method;
+
+    /**
+     * CONFIG
+     */
+    private String config;
+
+    /**
+     * NAME
+     */
+    private String name;
+
+    /**
+     * DESCRIPTION
+     */
+    private String description;
+
+    /**
+     * CREATE DATE
+     */
+    private LocalDateTime createDate;
+
+    /**
+     * UPDATE DATE
+     */
+    private LocalDateTime updateDate;
+
+    /**
+     * OPERATOR
+     */
+    private String operator;
+
+    public PermissionUrlEntity(PermissionUrlId id, PermissionUrlModel model) {
+        this.id = id;
+        CopyUtil.run(model, this);
     }
 
-    public static PermissionUrlEntity create(PermissionUrlModel model) {
-        final PermissionUrlRepository repository = SpringUtil.getBean(PermissionUrlRepository.class);
-        return new PermissionUrlEntity(repository.saveAndFlush(model));
+    @Override
+    public PermissionUrlId id() {
+        return id;
     }
 
-    private PermissionUrlEntity(PermissionUrlModel model) {
-        this.model = model;
-    }
-
-    public PermissionUrlEntity update(PermissionUrlModel um) {
-        um.setId(null);
-        final PermissionUrlRepository repository = SpringUtil.getBean(PermissionUrlRepository.class);
-        return new PermissionUrlEntity(repository.saveAndFlush(CopyUtil.run(um, model)));
-    }
-
-    public PermissionUrlEntity delete() {
-        final PermissionUrlRepository repository = SpringUtil.getBean(PermissionUrlRepository.class);
-        return new PermissionUrlEntity(repository.saveAndFlush(model.setIsDelete(1)));
-    }
-
-    public PermissionUrlModel getModel() {
-        return model;
+    public PermissionUrlModel convertToModel() {
+        return CopyUtil.run(this, PermissionUrlModel.class).setId(id == null ? null : id.getId());
     }
 
 }

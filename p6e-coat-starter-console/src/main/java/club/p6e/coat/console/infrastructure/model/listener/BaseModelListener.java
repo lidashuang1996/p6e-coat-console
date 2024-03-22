@@ -1,8 +1,8 @@
 package club.p6e.coat.console.infrastructure.model.listener;
 
-import club.p6e.cloud.console.infrastructure.model.*;
+import club.p6e.coat.common.global.GlobalUserInfo;
+import club.p6e.coat.common.global.Globals;
 import club.p6e.coat.console.infrastructure.model.*;
-import com.darvi.hksi.badminton.lib.AuthCore;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
@@ -33,7 +33,6 @@ public class BaseModelListener {
             PermissionUrlModel.class,
             PermissionUrlGroupModel.class,
             PermissionUrlGroupRelationUrlModel.class,
-            Oauth2ClientModel.class
     };
 
     /**
@@ -76,7 +75,7 @@ public class BaseModelListener {
                         }
                         case OPERATOR -> {
                             field.setAccessible(true);
-                            final AuthCore auth = AuthCore.getThreadInstance();
+                            final GlobalUserInfo auth = Globals.getUserInfo();
                             field.set(target, String.valueOf(auth.getId()));
                         }
                         case VERSION, IS_DELETE -> {
@@ -121,7 +120,7 @@ public class BaseModelListener {
                         }
                         case OPERATOR -> {
                             field.setAccessible(true);
-                            final AuthCore auth = AuthCore.getThreadInstance();
+                            final GlobalUserInfo auth = Globals.getUserInfo();
                             field.set(target, String.valueOf(auth.getId()));
                         }
                         default -> {

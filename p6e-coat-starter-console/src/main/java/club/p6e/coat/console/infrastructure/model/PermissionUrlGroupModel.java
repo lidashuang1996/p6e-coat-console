@@ -1,8 +1,8 @@
 package club.p6e.coat.console.infrastructure.model;
 
+import club.p6e.coat.common.search.Searchable;
+import club.p6e.coat.common.sortable.Sortable;
 import club.p6e.coat.console.infrastructure.model.listener.BaseModelListener;
-import com.darvi.hksi.badminton.lib.Searchable;
-import com.darvi.hksi.badminton.lib.Sortable;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -19,7 +19,6 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 @Entity
 @Table(name = "p6e_permission_url_group")
-@Where(clause = "is_delete = 0")
 @EntityListeners(value = BaseModelListener.class)
 public class PermissionUrlGroupModel implements Serializable {
 
@@ -32,37 +31,38 @@ public class PermissionUrlGroupModel implements Serializable {
     public static final String UPDATE_DATE = "updateDate";
     public static final String OPERATOR = "operator";
     public static final String VERSION = "version";
-    public static final String IS_DELETE = "isDelete";
+    public static final String PARENT = "parent";
 
     @Id
-    @Column(name = "[id]")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Searchable
-    @Column(name = "[mark]")
+    @Column(name = "parent")
+    private Integer parent;
+    @Searchable
+    @Column(name = "mark")
     private String mark;
     @Searchable
-    @Column(name = "[weight]")
+    @Column(name = "weight")
     private Integer weight;
     @Searchable
-    @Column(name = "[name]")
+    @Column(name = "name")
     private String name;
     @Searchable
-    @Column(name = "[description]")
+    @Column(name = "description")
     private String description;
     @Sortable
     @Searchable
-    @Column(name = "[create_date]")
+    @Column(name = "create_date")
     private LocalDateTime createDate;
     @Sortable
     @Searchable
-    @Column(name = "[update_date]")
+    @Column(name = "update_date")
     private LocalDateTime updateDate;
-    @Column(name = "[operator]")
+    @Column(name = "operator")
     private String operator;
-    @Column(name = "[version]")
+    @Column(name = "version")
     private Integer version;
-    @Column(name = "[is_delete]")
-    private Integer isDelete;
 
 }

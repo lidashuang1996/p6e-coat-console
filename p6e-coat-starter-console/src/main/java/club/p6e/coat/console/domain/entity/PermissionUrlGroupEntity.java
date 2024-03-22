@@ -1,56 +1,45 @@
 package club.p6e.coat.console.domain.entity;
 
-import club.p6e.coat.console.error.GlobalExceptionContext;
+import club.p6e.coat.common.utils.CopyUtil;
+import club.p6e.coat.console.domain.Entity;
+import club.p6e.coat.console.domain.identifier.PermissionUrlGroupId;
 import club.p6e.coat.console.infrastructure.model.PermissionUrlGroupModel;
-import club.p6e.coat.console.infrastructure.repository.PermissionUrlGroupRepository;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
-import com.darvi.hksi.badminton.lib.utils.SpringUtil;
-import java.util.Optional;
+import lombok.Data;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * @author lidashuang
  * @version 1.0
  */
-public class PermissionUrlGroupEntity {
+@Data
+public class PermissionUrlGroupEntity implements Entity<PermissionUrlGroupId>, Serializable {
+    private final PermissionUrlGroupId id;
+    private Integer parent;
+    private String mark;
+    private Integer weight;
+    private String name;
+    private String description;
+    private LocalDateTime createDate;
+    private LocalDateTime updateDate;
+    private String operator;
 
-    private final PermissionUrlGroupModel model;
+    public PermissionUrlGroupEntity(PermissionUrlGroupId id, PermissionUrlGroupModel model) {
+        this.id = id;
+        CopyUtil.run(model, this);
+    }
 
-    public static PermissionUrlGroupEntity findById(Integer id) {
-        final PermissionUrlGroupRepository repository = SpringUtil.getBean(PermissionUrlGroupRepository.class);
-        final Optional<PermissionUrlGroupModel> optional = repository.findById(id);
-        if (optional.isEmpty()) {
-            throw GlobalExceptionContext.executeUserNotExistException(
-                    PermissionUrlEntity.class,
-                    "",
-                    ""
-            );
-        } else {
-            return new PermissionUrlGroupEntity(optional.get());
+    @Override
+    public PermissionUrlGroupId id() {
+        return id;
+    }
+
+    public PermissionUrlGroupModel convertToModel() {
+        if (parent == null) {
+            parent = 0;
         }
-    }
-
-    public static PermissionUrlGroupEntity create(PermissionUrlGroupModel model) {
-        final PermissionUrlGroupRepository repository = SpringUtil.getBean(PermissionUrlGroupRepository.class);
-        return new PermissionUrlGroupEntity(repository.saveAndFlush(model));
-    }
-
-    private PermissionUrlGroupEntity(PermissionUrlGroupModel model) {
-        this.model = model;
-    }
-
-    public PermissionUrlGroupEntity update(PermissionUrlGroupModel um) {
-        um.setId(null);
-        final PermissionUrlGroupRepository repository = SpringUtil.getBean(PermissionUrlGroupRepository.class);
-        return new PermissionUrlGroupEntity(repository.saveAndFlush(CopyUtil.run(um, model)));
-    }
-
-    public PermissionUrlGroupEntity delete() {
-        final PermissionUrlGroupRepository repository = SpringUtil.getBean(PermissionUrlGroupRepository.class);
-        return new PermissionUrlGroupEntity(repository.saveAndFlush(model.setIsDelete(1)));
-    }
-
-    public PermissionUrlGroupModel getModel() {
-        return model;
+        return CopyUtil.run(this, PermissionUrlGroupModel.class).setId(id == null ? null : id.getId());
     }
 
 }

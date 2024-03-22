@@ -1,7 +1,7 @@
 package club.p6e.coat.console.infrastructure.model;
 
+import club.p6e.coat.common.search.Searchable;
 import club.p6e.coat.console.infrastructure.model.listener.BaseModelListener;
-import com.darvi.hksi.badminton.lib.Searchable;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -32,18 +32,16 @@ public class PermissionUrlGroupRelationUrlModel implements Serializable {
 
 
     @Id
-    @Column(name = "[gid]")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "gid")
     private Integer gid;
     @Id
-    @Column(name = "[uid]")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "uid")
     private Integer uid;
     @Searchable
-    @Column(name = "[config]")
+    @Column(name = "config")
     private String config;
     @Searchable
-    @Column(name = "[attribute]")
+    @Column(name = "attribute")
     private String attribute;
 
 }

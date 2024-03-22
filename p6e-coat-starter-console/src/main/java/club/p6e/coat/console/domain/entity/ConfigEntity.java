@@ -1,60 +1,78 @@
 package club.p6e.coat.console.domain.entity;
 
-import club.p6e.coat.console.error.GlobalExceptionContext;
+import club.p6e.coat.common.utils.CopyUtil;
+import club.p6e.coat.console.domain.Entity;
+import club.p6e.coat.console.domain.identifier.ConfigId;
 import club.p6e.coat.console.infrastructure.model.ConfigModel;
-import club.p6e.coat.console.infrastructure.repository.ConfigRepository;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
-import com.darvi.hksi.badminton.lib.utils.SpringUtil;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.Optional;
+import java.time.LocalDateTime;
 
 /**
+ * 配置实体
+ *
  * @author lidashuang
  * @version 1.0
  */
-public class ConfigEntity implements Serializable {
+@Data
+@Accessors(chain = true)
+public class ConfigEntity implements Entity<ConfigId>, Serializable {
 
-    private final ConfigModel model; 
+    /**
+     * ID
+     */
+    private final ConfigId id;
 
-    public static ConfigEntity findById(Integer id) {
-        final ConfigRepository repository = SpringUtil.getBean(ConfigRepository.class);
-        final Optional<ConfigModel> optional = repository.findById(id);
-        if (optional.isEmpty()) {
-            throw GlobalExceptionContext.exceptionAccountException(
-                    ConfigEntity.class,
-                    "",
-                    ""
-            );
-        } else {
-            return new ConfigEntity(optional.get());
-        }
+    /**
+     * TYPE
+     */
+    private String type;
+
+    /**
+     * KEY
+     */
+    private String key;
+
+    /**
+     * VALUE
+     */
+    private String value;
+
+    /**
+     * OPERATOR
+     */
+    private String operator;
+
+    /**
+     * CREATE DATE
+     */
+    private LocalDateTime createDate;
+
+    /**
+     * UPDATE DATE
+     */
+    private LocalDateTime updateDate;
+
+    /**
+     * 构造方法初始化
+     *
+     * @param id    ID
+     * @param model 模型对象
+     */
+    public ConfigEntity(ConfigId id, ConfigModel model) {
+        this.id = id;
+        CopyUtil.run(model, this);
     }
 
-    public static ConfigEntity create(ConfigModel model) {
-        final ConfigRepository repository = SpringUtil.getBean(ConfigRepository.class);
-        return new ConfigEntity(repository.saveAndFlush(model));
+    @Override
+    public ConfigId id() {
+        return id;
     }
 
-    private ConfigEntity(ConfigModel model) {
-        this.model = model;
-    }
-
-
-    public ConfigEntity update(ConfigModel cm) {
-        cm.setId(null);
-        final ConfigRepository repository = SpringUtil.getBean(ConfigRepository.class);
-        return new ConfigEntity(repository.saveAndFlush(CopyUtil.run(cm, model)));
-    }
-
-    public ConfigEntity delete() {
-        final ConfigRepository repository = SpringUtil.getBean(ConfigRepository.class);
-        repository.deleteById(model.getId());
-        return this;
-    }
-
-    public ConfigModel getModel() {
-        return model;
+    public ConfigModel convertToModel() {
+        return CopyUtil.run(this, ConfigModel.class).setId(id == null ? null : id.getId());
     }
 
 }

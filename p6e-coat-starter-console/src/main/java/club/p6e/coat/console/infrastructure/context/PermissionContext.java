@@ -22,9 +22,8 @@ public class PermissionContext implements Serializable {
         @Accessors(chain = true)
         @EqualsAndHashCode(callSuper = true)
         public static class Request extends BaseContext.PagingParam implements Serializable {
-            private String query;
-            private SortableContext<SortableContext.Option> sort;
-            private SearchableContext<SearchableContext.Option> search;
+            private SortableContext sort;
+            private SearchableContext search;
 
             private Integer id;
             private String url;
@@ -56,7 +55,6 @@ public class PermissionContext implements Serializable {
         public static class ListVo extends BaseContext.ListResult implements Serializable {
             private List<Item> list;
         }
-
 
         @Data
         @Accessors(chain = true)
@@ -93,6 +91,66 @@ public class PermissionContext implements Serializable {
             private LocalDateTime createDate;
             private LocalDateTime updateDate;
             private String operator;
+        }
+
+        public static class Details implements Serializable {
+            @Data
+            @Accessors(chain = true)
+            @EqualsAndHashCode(callSuper = true)
+            public static class Request extends BaseContext.PagingParam implements Serializable {
+                private Integer id;
+            }
+
+            @Data
+            @Accessors(chain = true)
+            @EqualsAndHashCode(callSuper = true)
+            public static class Vo extends BaseContext.ListResult implements Serializable {
+                private Integer id;
+                private String url;
+                private String baseUrl;
+                private String method;
+                private String config;
+                private String name;
+                private String description;
+                private String operator;
+                private LocalDateTime createDate;
+                private LocalDateTime updateDate;
+                private List<GroupItem> groups;
+            }
+
+            @Data
+            @Accessors(chain = true)
+            @EqualsAndHashCode(callSuper = true)
+            public static class Dto extends BaseContext.ListResult implements Serializable {
+                private Integer id;
+                private String url;
+                private String baseUrl;
+                private String method;
+                private String config;
+                private String name;
+                private String description;
+                private String operator;
+                private LocalDateTime createDate;
+                private LocalDateTime updateDate;
+                private List<GroupItem> groups;
+            }
+
+            @Data
+            @Accessors(chain = true)
+            public static class GroupItem implements Serializable {
+                private Integer id;
+                private Integer parent;
+                private String mark;
+                private Integer weight;
+                private String name;
+                private String description;
+                private LocalDateTime createDate;
+                private LocalDateTime updateDate;
+                private String operator;
+
+                private String relationConfig;
+                private String relationAttribute;
+            }
         }
     }
 
@@ -101,11 +159,11 @@ public class PermissionContext implements Serializable {
         @Accessors(chain = true)
         @EqualsAndHashCode(callSuper = true)
         public static class Request extends BaseContext.PagingParam implements Serializable {
-            private String query;
-            private SortableContext<SortableContext.Option> sort;
-            private SearchableContext<SearchableContext.Option> search;
+            private SortableContext sort;
+            private SearchableContext search;
 
             private Integer id;
+            private Integer parent;
             private String mark;
             private Integer weight;
             private String name;
@@ -116,6 +174,7 @@ public class PermissionContext implements Serializable {
         @Accessors(chain = true)
         public static class Vo implements Serializable {
             private Integer id;
+            private Integer parent;
             private String mark;
             private Integer weight;
             private String name;
@@ -137,6 +196,7 @@ public class PermissionContext implements Serializable {
         @Accessors(chain = true)
         public static class Dto implements Serializable {
             private Integer id;
+            private Integer parent;
             private String mark;
             private Integer weight;
             private String name;
@@ -157,6 +217,7 @@ public class PermissionContext implements Serializable {
         @Accessors(chain = true)
         public static class Item implements Serializable {
             private Integer id;
+            private Integer parent;
             private String mark;
             private Integer weight;
             private String name;
@@ -179,6 +240,7 @@ public class PermissionContext implements Serializable {
             @EqualsAndHashCode(callSuper = true)
             public static class Vo extends BaseContext.ListResult implements Serializable {
                 private Integer id;
+                private Integer parent;
                 private String mark;
                 private Integer weight;
                 private String name;
@@ -186,7 +248,7 @@ public class PermissionContext implements Serializable {
                 private LocalDateTime createDate;
                 private LocalDateTime updateDate;
                 private String operator;
-                private List<Url> urls;
+                private List<UrlItem> urls;
             }
 
 
@@ -195,6 +257,7 @@ public class PermissionContext implements Serializable {
             @EqualsAndHashCode(callSuper = true)
             public static class Dto extends BaseContext.ListResult implements Serializable {
                 private Integer id;
+                private Integer parent;
                 private String mark;
                 private Integer weight;
                 private String name;
@@ -202,12 +265,12 @@ public class PermissionContext implements Serializable {
                 private LocalDateTime createDate;
                 private LocalDateTime updateDate;
                 private String operator;
-                private List<Url> urls;
+                private List<UrlItem> urls;
             }
 
             @Data
             @Accessors(chain = true)
-            public static class Url implements Serializable {
+            public static class UrlItem implements Serializable {
                 private Integer id;
                 private String url;
                 private String baseUrl;
@@ -223,6 +286,90 @@ public class PermissionContext implements Serializable {
             }
         }
 
+
+    }
+
+    public static class Tree implements Serializable {
+        @Data
+        @Accessors(chain = true)
+        public static class Request implements Serializable {
+            private Integer id;
+        }
+
+        @Data
+        @Accessors(chain = true)
+        public static class Dto implements Serializable {
+            private List<Item> list;
+        }
+
+        @Data
+        @Accessors(chain = true)
+        public static class Item implements Serializable {
+            private Integer id;
+            private Integer parent;
+            private String mark;
+            private Integer weight;
+            private String name;
+            private String description;
+            private LocalDateTime createDate;
+            private LocalDateTime updateDate;
+            private String operator;
+        }
+    }
+
+    public static class Association implements Serializable {
+
+        @Data
+        @Accessors(chain = true)
+        public static class Request implements Serializable {
+            private Integer uid;
+            private Integer gid;
+            private String config;
+            private String attribute;
+        }
+
+        @Data
+        @Accessors(chain = true)
+        public static class Vo implements Serializable {
+            private Integer uid;
+            private Integer gid;
+            private String config;
+            private String attribute;
+        }
+
+        @Data
+        @Accessors(chain = true)
+        public static class Dto implements Serializable {
+            private Integer uid;
+            private Integer gid;
+            private String config;
+            private String attribute;
+        }
+
+    }
+
+    public static class Disassociate implements Serializable {
+
+        @Data
+        @Accessors(chain = true)
+        public static class Request implements Serializable {
+            private Integer uid;
+            private Integer gid;
+        }
+
+        @Data
+        @Accessors(chain = true)
+        public static class Vo implements Serializable {
+            private Integer uid;
+            private Integer gid;
+        }
+
+        @Data
+        @Accessors(chain = true)
+        public static class Dto implements Serializable {
+            private Integer uid;
+            private Integer gid;
+        }
 
     }
 }

@@ -9,7 +9,6 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,9 +23,8 @@ public class DictionaryContext implements Serializable {
     @Accessors(chain = true)
     @EqualsAndHashCode(callSuper = true)
     public static class Request extends BaseContext.PagingParam implements Serializable {
-        private String query;
-        private SortableContext<SortableContext.Option> sort;
-        private SearchableContext<SearchableContext.Option> search;
+        private SortableContext sort;
+        private SearchableContext search;
 
         private Integer id;
         private String type;
@@ -89,14 +87,13 @@ public class DictionaryContext implements Serializable {
         private String operator;
     }
 
-    public static class Type implements Serializable {
+    public static class Option implements Serializable {
         @Data
         @Accessors(chain = true)
-        @EqualsAndHashCode(callSuper = true)
-        public static class Request extends BaseContext.PagingParam implements Serializable {
+        public static class Request implements Serializable {
             private String type;
             private String language;
-            private List<String> types = new ArrayList<>();
+            private List<String> types;
         }
 
         @Data

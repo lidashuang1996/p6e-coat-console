@@ -21,11 +21,11 @@ public class ConfigContext implements Serializable {
     @Accessors(chain = true)
     @EqualsAndHashCode(callSuper = true)
     public static class Request extends BaseContext.PagingParam implements Serializable {
-        private String query;
-        private SortableContext<SortableContext.Option> sort;
-        private SearchableContext<SearchableContext.Option> search;
+        private SortableContext sort;
+        private SearchableContext search;
 
         private Integer id;
+        private String type;
         private String key;
         private String value;
     }
@@ -34,6 +34,7 @@ public class ConfigContext implements Serializable {
     @Accessors(chain = true)
     public static class Vo implements Serializable {
         private Integer id;
+        private String type;
         private String key;
         private String value;
         private LocalDateTime createDate;
@@ -53,6 +54,7 @@ public class ConfigContext implements Serializable {
     @Accessors(chain = true)
     public static class Dto implements Serializable {
         private Integer id;
+        private String type;
         private String key;
         private String value;
         private LocalDateTime createDate;
@@ -71,6 +73,7 @@ public class ConfigContext implements Serializable {
     @Accessors(chain = true)
     public static class Item implements Serializable {
         private Integer id;
+        private String type;
         private String key;
         private String value;
         private LocalDateTime createDate;

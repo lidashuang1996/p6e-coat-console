@@ -7,6 +7,8 @@ import club.p6e.coat.console.infrastructure.context.FileUploadLogContext;
 import org.springframework.web.bind.annotation.*;
 
 /**
+ * 文件上传日志接口
+ *
  * @author lidashuang
  * @version 1.0
  */
@@ -14,13 +16,21 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/file/upload/log")
 public class FileUploadLogController {
 
-    private final FileUploadLogService server;
+    /**
+     * 文件上传日志服务
+     */
+    private final FileUploadLogService service;
 
-    public FileUploadLogController(FileUploadLogService server) {
-        this.server = server;
+    /**
+     * 构造方法初始化
+     *
+     * @param service 文件上传日志服务
+     */
+    public FileUploadLogController(FileUploadLogService service) {
+        this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("")
     public ResultContext list(FileUploadLogContext.Request request) {
         return getList(request);
     }
@@ -32,15 +42,15 @@ public class FileUploadLogController {
 
     @PostMapping("/list")
     public ResultContext postList(@RequestBody FileUploadLogContext.Request request) {
-        final FileUploadLogContext.ListDto result = server.list(request);
+        final FileUploadLogContext.ListDto result = service.list(request);
         return ResultContext.build(CopyUtil.run(result, FileUploadLogContext.ListVo.class));
     }
 
-    @GetMapping("/details/{id}")
-    public ResultContext details(@PathVariable Integer id) {
-        final FileUploadLogContext.Details.Dto result =
-                server.details(new FileUploadLogContext.Details.Request().setId(id));
-        return ResultContext.build(CopyUtil.run(result, FileUploadLogContext.Details.Vo.class));
+    @GetMapping("/{id}")
+    public ResultContext get(@PathVariable Integer id) {
+        final FileUploadLogContext.Dto result =
+                service.get(new FileUploadLogContext.Request().setId(id));
+        return ResultContext.build(CopyUtil.run(result, FileUploadLogContext.Vo.class));
     }
 
 }

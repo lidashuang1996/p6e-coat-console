@@ -31,29 +31,29 @@ public class FileUploadModel implements Serializable {
     public static final String VERSION = "version";
 
     @Id
-    @Column(name = "[id]")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "[name]")
+    @Column(name = "name")
     private String name;
-    @Column(name = "[size]")
+    @Column(name = "size")
     private Long size;
-    @Column(name = "[source]")
+    @Column(name = "source")
     private String source;
-    @Column(name = "[storage_type]")
+    @Column(name = "storage_type")
     private String storageType;
-    @Column(name = "[storage_location]")
+    @Column(name = "storage_location")
     private String storageLocation;
-    @Column(name = "[owner]")
+    @Column(name = "owner")
     private String owner;
-    @Column(name = "[lock]")
+    @Column(name = "lock")
     private Integer lock;
-    @Column(name = "[create_date]")
+    @Column(name = "create_date")
     private LocalDateTime createDate;
-    @Column(name = "[update_date]")
+    @Column(name = "update_date")
     private LocalDateTime updateDate;
-    @Column(name = "[operator]")
+    @Column(name = "operator")
     private String operator;
-    @Column(name = "[version]")
+    @Column(name = "version")
     private Integer version;
 }

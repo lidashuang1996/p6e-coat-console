@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * @author lidashuang
@@ -17,28 +18,34 @@ public class MeContext implements Serializable {
         @Accessors(chain = true)
         public static class Vo implements Serializable {
             private Integer id;
+            private Integer status;
+            private Integer enabled;
+            private Integer internal;
+            private Integer administrator;
             private String account;
-            private Integer state;
-            private Integer role;
-            private String roleName;
+            private String phone;
+            private String mailbox;
             private String name;
             private String nickname;
             private String avatar;
-            private String describe;
+            private String description;
         }
 
         @Data
         @Accessors(chain = true)
         public static class Dto implements Serializable {
             private Integer id;
+            private Integer status;
+            private Integer enabled;
+            private Integer internal;
+            private Integer administrator;
             private String account;
-            private Integer state;
-            private Integer role;
-            private String roleName;
+            private String phone;
+            private String mailbox;
             private String name;
             private String nickname;
             private String avatar;
-            private String describe;
+            private String description;
         }
 
     }
@@ -49,8 +56,6 @@ public class MeContext implements Serializable {
         @Data
         @Accessors(chain = true)
         public static class Request implements Serializable {
-            private Integer id;
-
             private String oldPassword;
             private String newPassword;
         }
@@ -58,13 +63,41 @@ public class MeContext implements Serializable {
         @Data
         @Accessors(chain = true)
         public static class Vo implements Serializable {
-            private String content;
+            private Integer id;
+            private Integer status;
+            private Integer enabled;
+            private Integer internal;
+            private Integer administrator;
+            private String account;
+            private String phone;
+            private String mailbox;
+            private String name;
+            private String nickname;
+            private String avatar;
+            private String description;
+            private LocalDateTime createDate;
+            private LocalDateTime updateDate;
+            private String operator;
         }
 
         @Data
         @Accessors(chain = true)
         public static class Dto implements Serializable {
-            private String content;
+            private Integer id;
+            private Integer status;
+            private Integer enabled;
+            private Integer internal;
+            private Integer administrator;
+            private String account;
+            private String phone;
+            private String mailbox;
+            private String name;
+            private String nickname;
+            private String avatar;
+            private String description;
+            private LocalDateTime createDate;
+            private LocalDateTime updateDate;
+            private String operator;
         }
 
     }

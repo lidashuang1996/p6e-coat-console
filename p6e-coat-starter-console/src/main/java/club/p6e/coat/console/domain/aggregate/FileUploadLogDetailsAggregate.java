@@ -1,56 +1,56 @@
 package club.p6e.coat.console.domain.aggregate;
 
-import club.p6e.coat.console.error.GlobalExceptionContext;
+import club.p6e.coat.console.domain.Aggregate;
+import club.p6e.coat.console.domain.identifier.FileUploadLogId;
 import club.p6e.coat.console.infrastructure.model.FileUploadChunkModel;
 import club.p6e.coat.console.infrastructure.model.FileUploadModel;
-import club.p6e.coat.console.infrastructure.repository.FileUploadChunkRepository;
-import club.p6e.coat.console.infrastructure.repository.FileUploadRepository;
-import com.darvi.hksi.badminton.lib.utils.SpringUtil;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.Specification;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
-import java.util.Optional;
 
 /**
+ * 文件上传日志的聚合根
+ *
  * @author lidashuang
  * @version 1.0
  */
-public class FileUploadLogDetailsAggregate {
+@Data
+@Accessors(chain = true)
+public class FileUploadLogDetailsAggregate implements Aggregate<FileUploadLogId>, Serializable {
 
-    private final FileUploadModel model;
+    /**
+     * ID
+     */
+    private final FileUploadLogId id;
+
+    /**
+     * DATA
+     */
+    private final FileUploadModel data;
+
+    /**
+     * LIST
+     */
     private final List<FileUploadChunkModel> list;
 
-    public static FileUploadLogDetailsAggregate get(Integer id) {
-        final FileUploadRepository fRepository = SpringUtil.getBean(FileUploadRepository.class);
-        final FileUploadChunkRepository fcRepository = SpringUtil.getBean(FileUploadChunkRepository.class);
-        final Optional<FileUploadModel> fOptional = fRepository.findById(id);
-        if (fOptional.isEmpty()) {
-            throw GlobalExceptionContext.executeParameterException(
-                    FileUploadLogDetailsAggregate.class,
-                    "",
-                    ""
-            );
-        }
-        final FileUploadModel fileUploadModel = fOptional.get();
-        final List<FileUploadChunkModel> fileUploadChunkModelList = fcRepository.findAll(
-                (Specification<FileUploadChunkModel>) (rt, qy, cb) ->
-                        cb.equal(rt.get(FileUploadChunkModel.FID), fileUploadModel.getId()),
-                Sort.by(Sort.Order.asc(FileUploadChunkModel.ID)));
-        return new FileUploadLogDetailsAggregate(fileUploadModel, new ArrayList<>(fileUploadChunkModelList));
-    }
-
-    private FileUploadLogDetailsAggregate(FileUploadModel model, List<FileUploadChunkModel> list) {
+    /**
+     * 构造方法初始化
+     *
+     * @param id   ID 对象
+     * @param data 数据对象
+     * @param list 列表对象
+     */
+    public FileUploadLogDetailsAggregate(FileUploadLogId id, FileUploadModel data, List<FileUploadChunkModel> list) {
+        this.id = id;
+        this.data = data;
         this.list = list;
-        this.model = model;
     }
 
-    public FileUploadModel getModel() {
-        return model;
+    @Override
+    public FileUploadLogId id() {
+        return id;
     }
 
-    public List<FileUploadChunkModel> getList() {
-        return list;
-    }
 }

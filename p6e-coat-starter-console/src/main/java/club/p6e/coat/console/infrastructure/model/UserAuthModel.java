@@ -1,10 +1,8 @@
 package club.p6e.coat.console.infrastructure.model;
 
-import club.p6e.coat.console.infrastructure.model.listener.BaseModelListener;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.hibernate.annotations.Where;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -17,8 +15,6 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 @Entity
 @Table(name = "p6e_user_auth")
-@Where(clause = "is_delete = 0")
-@EntityListeners(value = BaseModelListener.class)
 public class UserAuthModel implements Serializable {
 
     public static final String ID = "id";
@@ -33,25 +29,22 @@ public class UserAuthModel implements Serializable {
     public static final String IS_DELETE = "isDelete";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "[account]")
-    private Integer account;
-    @Column(name = "[phone]")
-    private Integer phone;
-    @Column(name = "[mailbox]")
+    @Column(name = "account")
+    private String account;
+    @Column(name = "phone")
+    private String phone;
+    @Column(name = "mailbox")
     private String mailbox;
-    @Column(name = "[password]")
+    @Column(name = "password")
     private String password;
-    @Column(name = "[create_date]")
+    @Column(name = "create_date")
     private LocalDateTime createDate;
-    @Column(name = "[update_date]")
+    @Column(name = "update_date")
     private LocalDateTime updateDate;
-    @Column(name = "[operator]")
-    private String operator;
-    @Column(name = "[version]")
+    @Column(name = "version")
     private Integer version;
-    @Column(name = "[is_delete]")
-    private Integer isDelete;
+    @Column(name = "operator")
+    private String operator;
 
 }

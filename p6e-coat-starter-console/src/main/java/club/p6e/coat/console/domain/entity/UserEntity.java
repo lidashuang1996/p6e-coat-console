@@ -1,58 +1,134 @@
 package club.p6e.coat.console.domain.entity;
 
-import club.p6e.coat.console.error.GlobalExceptionContext;
+import club.p6e.coat.common.utils.CopyUtil;
+import club.p6e.coat.common.utils.GeneratorUtil;
+import club.p6e.coat.console.domain.Entity;
+import club.p6e.coat.console.domain.identifier.UserId;
 import club.p6e.coat.console.infrastructure.model.UserModel;
-import club.p6e.coat.console.infrastructure.repository.UserRepository;
-import com.darvi.hksi.badminton.lib.utils.CopyUtil;
-import com.darvi.hksi.badminton.lib.utils.SpringUtil;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.Optional;
+import java.time.LocalDateTime;
 
 /**
+ * 用户实体
+ *
  * @author lidashuang
  * @version 1.0
  */
-public class UserEntity implements Serializable {
+@Data
+@Accessors(chain = true)
+public class UserEntity implements Entity<UserId>, Serializable {
 
-    private final UserModel model;
+    /**
+     * ID
+     */
+    private final UserId id;
 
-    public static UserEntity findById(Integer id) {
-        final UserRepository repository = SpringUtil.getBean(UserRepository.class);
-        final Optional<UserModel> optional = repository.findById(id);
-        if (optional.isEmpty()) {
-            throw GlobalExceptionContext.executeUserNotExistException(
-                    UserEntity.class,
-                    "",
-                    ""
-            );
-        } else {
-            return new UserEntity(optional.get());
+    /**
+     * STATUS
+     */
+    private Integer status;
+
+    /**
+     * ENABLED
+     */
+    private Integer enabled;
+
+    /**
+     * INTERNAL
+     */
+    private Integer internal;
+
+    /**
+     * ADMINISTRATOR
+     */
+    private Integer administrator;
+
+    /**
+     * ACCOUNT
+     */
+    private String account;
+
+    /**
+     * PHONE
+     */
+    private String phone;
+
+    /**
+     * MAILBOX
+     */
+    private String mailbox;
+
+    /**
+     * NAME
+     */
+    private String name;
+
+    /**
+     * NICKNAME
+     */
+    private String nickname;
+
+    /**
+     * AVATAR
+     */
+    private String avatar;
+
+    /**
+     * DESCRIPTION
+     */
+    private String description;
+
+    /**
+     * OPERATOR
+     */
+    private String operator;
+
+    /**
+     * CREATE DATE
+     */
+    private LocalDateTime createDate;
+
+    /**
+     * UPDATE DATE
+     */
+    private LocalDateTime updateDate;
+
+    public UserEntity(UserId id, UserModel model) {
+        this.id = id;
+        CopyUtil.run(model, this);
+    }
+
+    @Override
+    public UserId id() {
+        return id;
+    }
+
+    public UserModel convertToModel() {
+        if (status == null) {
+            status = 0;
         }
-    }
-
-    public static UserEntity create(UserModel model) {
-        final UserRepository repository = SpringUtil.getBean(UserRepository.class);
-        return new UserEntity(repository.saveAndFlush(model));
-    }
-
-    private UserEntity(UserModel model) {
-        this.model = model;
-    }
-
-    public UserEntity update(UserModel um) {
-        um.setId(null);
-        final UserRepository repository = SpringUtil.getBean(UserRepository.class);
-        return new UserEntity(repository.saveAndFlush(CopyUtil.run(um, model)));
-    }
-
-    public UserEntity delete() {
-        final UserRepository repository = SpringUtil.getBean(UserRepository.class);
-        return new UserEntity(repository.saveAndFlush(model.setIsDelete(1)));
-    }
-
-    public UserModel getModel() {
-        return model;
+        if (enabled == null) {
+            enabled = 1;
+        }
+        if (internal == null) {
+            internal = 0;
+        }
+        if (administrator == null) {
+            administrator = 0;
+        }
+        if (name == null) {
+            name = GeneratorUtil.uuid();
+        }
+        if (nickname == null) {
+            nickname = name;
+        }
+        if (avatar == null) {
+            avatar = "default.jpg";
+        }
+        return CopyUtil.run(this, UserModel.class).setId(id == null ? null : id.getId());
     }
 
 }

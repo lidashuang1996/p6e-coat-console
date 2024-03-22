@@ -21,20 +21,21 @@ public class UserContext implements Serializable {
     @Accessors(chain = true)
     @EqualsAndHashCode(callSuper = true)
     public static class Request extends BaseContext.PagingParam implements Serializable {
-        private String query;
-        private SortableContext<SortableContext.Option> sort;
-        private SearchableContext<SearchableContext.Option> search;
+        private SortableContext sort;
+        private SearchableContext search;
 
         private Integer id;
         private Integer status;
         private Integer enabled;
+        private Integer internal;
+        private Integer administrator;
         private String account;
         private String phone;
         private String mailbox;
         private String name;
         private String nickname;
         private String avatar;
-        private String describe;
+        private String description;
 
         private String password;
     }
@@ -45,13 +46,15 @@ public class UserContext implements Serializable {
         private Integer id;
         private Integer status;
         private Integer enabled;
+        private Integer internal;
+        private Integer administrator;
         private String account;
         private String phone;
         private String mailbox;
         private String name;
         private String nickname;
         private String avatar;
-        private String describe;
+        private String description;
         private LocalDateTime createDate;
         private LocalDateTime updateDate;
         private String operator;
@@ -71,13 +74,15 @@ public class UserContext implements Serializable {
         private Integer id;
         private Integer status;
         private Integer enabled;
+        private Integer internal;
+        private Integer administrator;
         private String account;
         private String phone;
         private String mailbox;
         private String name;
         private String nickname;
         private String avatar;
-        private String describe;
+        private String description;
         private LocalDateTime createDate;
         private LocalDateTime updateDate;
         private String operator;
@@ -96,13 +101,15 @@ public class UserContext implements Serializable {
         private Integer id;
         private Integer status;
         private Integer enabled;
+        private Integer internal;
+        private Integer administrator;
         private String account;
         private String phone;
         private String mailbox;
         private String name;
         private String nickname;
         private String avatar;
-        private String describe;
+        private String description;
         private LocalDateTime createDate;
         private LocalDateTime updateDate;
         private String operator;

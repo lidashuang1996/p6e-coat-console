@@ -6,6 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
+          <factory-entry name="entityManagerFactory" value="a462885b-423e-477e-ba26-40ad9c43504b" />
           <factory-entry name="p6e-coat-starter-console" value="a462885b-423e-477e-ba26-40ad9c43504b" />
         </datasource-mapping>
         <naming-strategy-map />
