@@ -4,6 +4,8 @@ import club.p6e.coat.common.global.GlobalUserInfo;
 import club.p6e.coat.common.global.Globals;
 import club.p6e.coat.console.infrastructure.model.*;
 import jakarta.persistence.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Field;
@@ -23,16 +25,24 @@ public class BaseModelListener {
     private static final String UPDATE_DATE = "updateDate";
 
     /**
+     * 注入日志对象
+     */
+    private static final Logger LOGGER = LoggerFactory.getLogger(BaseModelListener.class);
+
+    /**
      * 注册使用改功能的模型
      */
     private static final Class<?>[] MS = new Class<?>[]{
             ConfigModel.class,
             DictionaryModel.class,
-            UserModel.class,
-            UserAuthModel.class,
-            PermissionUrlModel.class,
+            FileUploadChunkModel.class,
+            FileUploadModel.class,
+            KeyValueModel.class,
             PermissionUrlGroupModel.class,
             PermissionUrlGroupRelationUrlModel.class,
+            UserModel.class,
+            PermissionUrlModel.class,
+            UserAuthModel.class,
     };
 
     /**
@@ -86,7 +96,7 @@ public class BaseModelListener {
                         }
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    LOGGER.error("[ BASE MODEL LISTENER UPDATE CREATE ]", e);
                 }
             }
         }
@@ -127,7 +137,7 @@ public class BaseModelListener {
                         }
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    LOGGER.error("[ BASE MODEL LISTENER UPDATE ERROR ]", e);
                 }
             }
         }

@@ -190,5 +190,13 @@ public final class GlobalExceptionContext {
         return new ResourceException(sc, error, content);
     }
 
+    public static ResourceException executeKeyValueDataExistException(Class<?> sc, String error, String content) {
+        return new ResourceException(sc, error, content);
+    }
+
+    public static ResourceException executeKeyValueDataNotExistException(Class<?> sc, String error, String content) {
+        return new ResourceException(sc, error, content);
+    }
+
 
 }
